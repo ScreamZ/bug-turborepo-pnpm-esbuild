@@ -1,0 +1,40 @@
+{
+  "name": "some-toolbox",
+  "description": "none",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "RELEASE=true tsup",
+    "dev": "tsup --watch",
+    "lint": "TIMING=1 eslint src --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "prepublishOnly": "RELEASE=true npm run build"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^2.9.7",
+    "dayjs": "^1.11.4",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.5",
+    "react": "18.2.0",
+    "react-hook-form": "^7.34.0",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.2.1",
+    "typescript": "^4.7.4"
+  },
+  "volta": {
+    "node": "14.19.0"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-hook-form": "^7.33.1"
+  }
+}
